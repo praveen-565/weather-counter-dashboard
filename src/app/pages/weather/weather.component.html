@@ -1,0 +1,83 @@
+<div class="weather-page-background py-4">
+  <div class="weather-overlay container">
+    <h5 class="display-8 fw-bold text-primary text-center">
+      <i class="bi bi-cloud-sun-fill me-2"></i> Your Personalized Weather Report
+    </h5>
+    <p class="lead display-8 text-center text-muted mb-4">
+      Stay updated with the latest forecast tailored for your selected cities.
+    </p>
+
+    <div class="container py-4">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <div class="input-group mb-3">
+              <input [(ngModel)]="cityName" class="form-control" placeholder="Type city name">
+              <button class="btn btn-primary" [disabled]="!cityName" (click)="addCity()">
+                <i class="bi bi-plus"></i>
+              </button>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="text-muted mb-0">Recent Locations</h6>
+              <button class="btn btn-sm btn-outline-danger" (click)="clearLocations()">
+                <i class="bi bi-trash"></i> Clear All
+              </button>
+            </div>
+
+            <ul class="list-group">
+              <li *ngFor="let city of locations()"
+                class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="d-flex flex-column" (click)="selectCity(city)" style="cursor:pointer">
+                  <strong>{{ city.name }}</strong>
+                  <span class="text-muted small">{{ city.temp }}°C</span>
+                </div>
+                <div class="d-flex gap-1">
+                  <button class="btn btn-sm btn-outline-secondary" (click)="selectCity(city)">
+                    <i class="bi bi-arrow-clockwise"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" (click)="removeCity(city, $event)">
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-8" *ngIf="forecast()">
+          <div class="card p-3 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h4>{{ selectedCity() }}</h4>
+              <button class="btn btn-outline-secondary btn-sm" (click)="selectCity({ name: selectedCity() })">
+                <i class="bi bi-arrow-clockwise"></i>
+              </button>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img [src]="'https://openweathermap.org/img/wn/' + forecast()?.list[0]?.weather[0]?.icon + '@2x.png'"
+                width="80" height="80" alt="Weather icon">
+              <div>
+                <div class="fs-4">{{ forecast()?.list[0]?.main.temp }}°C</div>
+                <div>{{ forecast()?.list[0]?.weather[0]?.description }}</div>
+                <div>Wind: {{ forecast()?.list[0]?.wind.speed }} m/s {{ forecast()?.list[0]?.wind.deg }}°</div>
+                <div>Pressure: {{ forecast()?.list[0]?.main.pressure }} hPa</div>
+              </div>
+            </div>
+
+            <div class="row g-2">
+              <div *ngFor="let item of forecast()?.list.slice(0, 5)" class="col-md-2 col-4">
+                <div class="card p-2 text-center">
+                  <div>{{ item.dt_txt | date: 'd MMM (EEE)' }}</div>
+                  <img [src]="'https://openweathermap.org/img/wn/' + item.weather[0].icon + '@2x.png'" width="50"
+                    height="50" alt="Weather icon">
+                  <div>{{ item.main.temp }}°C</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

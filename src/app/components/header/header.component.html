@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container-fluid">
+   <a class="navbar-brand d-flex align-items-center" href="#">
+     <img src="https://cdn-icons-png.flaticon.com/512/1116/1116453.png" alt="Logo" width="32" height="32" class="me-2">
+     <span class="fw-bold wearther-text ">Weather Dashboard</span>
+   </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/counter" routerLinkActive="active">Counter App</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/vatavaran" routerLinkActive="active">Weather App</a>
+        </li>
+      </ul>
+      <span class="ms-auto text-muted small">Total Counters: {{ counterCount }}</span>
+    </div>
+  </div>
+</nav>

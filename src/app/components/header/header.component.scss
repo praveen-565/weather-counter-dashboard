@@ -1,0 +1,44 @@
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.5rem;
+}
+
+.navbar-brand span {
+  font-size: 0.9rem;
+  color: #f39c12; 
+  line-height: 0.8;
+  text-wrap: wrap-reverse;
+}
+
+.nav-link {
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.nav-link.active {
+  color: #0d6efd !important;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #0a58ca;
+}
+
+.ms-auto {
+  margin-left: auto !important;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+img {
+  margin-top: 0.05rem;
+}

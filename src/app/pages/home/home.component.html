@@ -1,35 +1,18 @@
-<section class="hero py-5 text-center text-white">
-  <div class="container">
-    <h1 class="display-4 fw-bold">Welcome to Project Task</h1>
-    <p class="lead">Manage your counters and check the weather forecasts effortlessly.</p>
-    <div class="d-flex justify-content-center gap-3 mt-4">
-      <a routerLink="/counter" class="btn btn-primary btn-lg">Go to Counter App</a>
-      <a routerLink="/vatavaran" class="btn btn-outline-light btn-lg">Check Weather</a>
+<div class="home-page-background py-5">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold text-primary mb-3">
+      <i class="bi bi-house-door-fill me-2"></i> Welcome to the Weather Counter Dashboard
+    </h1>
+    <p class="lead text-muted mb-4">
+      Track your counters & get personalized weather updates – all in one place.
+    </p>
+    <div class="d-flex justify-content-center gap-3">
+      <a routerLink="/counter" class="btn btn-primary btn-lg">
+        <i class="bi bi-123"></i> Go to Counter App
+      </a>
+      <a routerLink="/vatavaran" class="btn btn-outline-primary btn-lg">
+        <i class="bi bi-cloud-sun"></i> Go to Weather App
+      </a>
     </div>
   </div>
-</section>
-
-<section class="features py-5 bg-light">
-  <div class="container">
-    <div class="row text-center g-4">
-      <div class="col-md-4">
-        <div class="card p-4 h-100 shadow-sm">
-          <h5>Counter Management</h5>
-          <p>Quickly add, increment, decrement, or delete multiple counters with ease.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-4 h-100 shadow-sm">
-          <h5>Weather Forecast</h5>
-          <p>Search for cities and view their 5-day weather forecast powered by OpenWeather API.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-4 h-100 shadow-sm">
-          <h5>Modern Alerts</h5>
-          <p>Enjoy sleek confirmation dialogs and notifications powered by SweetAlert2.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>

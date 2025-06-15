@@ -1,18 +1,28 @@
-.hero {
-  background: linear-gradient(135deg, #0d6efd, #6610f2);
+.home-page-background {
+  background: linear-gradient(135deg, #e8f0fe, #f8f9fa);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+h1 {
+  color: #f39c12;
+}
+
+.btn-lg {
+  padding: 0.6rem 1.4rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
   color: #fff;
-}
-
-.features .card {
-  border-radius: 0.75rem;
-  background-color: #ffffff;
-  transition: transform 0.3s ease;
-}
-
-.features .card:hover {
-  transform: translateY(-5px);
-}
-
-.features h5 {
-  color: #0d6efd;
 }
